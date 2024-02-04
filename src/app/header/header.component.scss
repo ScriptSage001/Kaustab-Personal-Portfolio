@@ -28,10 +28,62 @@
   }
 
   .logo {
+    color: var(--primary);
     font-size: 2rem;
   }
 
   .logo:hover {
     cursor: default;
   }
+}
+
+/* COLOR MODE TOGGLE BUTTON */
+
+label {
+  position: relative;
+  width: 90px;
+  height: 40px;
+  display: block;
+  background: var(--interactive);
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.5), inset 0px -5px 15px rgba(255, 255, 255, 0.5);
+}
+
+label:after {
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background: var(--background);
+  background-image: var(--toggle-icon);
+  background-size: cover;
+  border-radius: 100px;
+  top: 5px;
+  left: 5px;
+  transition: 0.5s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+input:checked ~ label:after {
+  left: 85px;
+  transform: translateX(-100%);
+  //background: linear-gradient(180deg, #777, #3a3a3a);
+  background: var(--background);
+  background-image: var(--toggle-icon);
+  background-size: cover;
+}
+
+input:checked ~ label {
+  background: var(--primary);
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.5), inset 0px -5px 15px rgba(255, 255, 255, 0.5);
+}
+
+input:checked + label {
+  background: var(--primary);
+  box-shadow: inset 0px 5px 15px rgba(255, 255, 255, 0.5), inset 0px -5px 15px rgba(0, 0, 0, 0.5);
+}
+
+input {
+  display: none;
 }

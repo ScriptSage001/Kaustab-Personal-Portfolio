@@ -1,3 +1,14 @@
-$primary-color: black;
-$secondary-color: grey;
-$interactive-color: rgb(181, 181, 181);
+$background-light: rgb(255, 255, 255);
+$primary-light: rgb(0, 0, 0);
+$secondary-light: rgb(128, 128, 128);
+$interactive-light: rgb(55, 55, 55);
+
+$toggle-icon-light: url(../assets/sun.svg);
+
+
+$background-dark: rgb(0, 0, 0);
+$primary-dark: rgb(255, 255, 255);
+$secondary-dark: rgb(128, 128, 128);
+$interactive-dark: rgb(200, 200, 200);
+
+$toggle-icon-dark: url(../assets/moon.png);
