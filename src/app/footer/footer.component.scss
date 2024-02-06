@@ -1,38 +1,31 @@
 @import '../../styles.scss';
 
 footer {
-  height: 8vh;
   margin: 0 1rem;
+  border-top: 1px solid var(--primary);
 
   .footer-copyright {
     color: var(--primary);
-    text-align: center;
-    height: 2vh;
-  }
-
-  .footer-nav {
-    display: flex;
-    justify-content: space-around;
+    font-weight: 500;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
     align-items: center;
-    height: 6vh;
+    width: 100%;
+    // padding-top: 6vh;
+    height: 4vh;
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      font-size: 1.3rem;
+    p {
+        text-align: center;
 
-      a {
-        color: var(--primary);
-        text-decoration: none;
+        a {
+          text-decoration: none;
+          color: var(--primary);
+        }
+
+        a:hover {
+          color: var(--secondary);
+        }
       }
-
-      a:hover {
-        color: var(--secondary);
-        text-decoration: underline;
-        text-underline-offset: 0.5rem;
-        text-decoration-color: var(--interactive);
-      }
-    }
   }
 }

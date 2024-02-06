@@ -7,6 +7,7 @@
   --secondary: #{$secondary-light};
   --interactive: #{$interactive-light};
   --toggle-icon: #{$toggle-icon-light};
+  --background-image: #{$background-image-light};
 
   &.dark-mode {
     --background: #{$background-dark};
@@ -14,6 +15,7 @@
     --secondary: #{$secondary-dark};
     --interactive: #{$interactive-dark};
     --toggle-icon: #{$toggle-icon-dark};
+    --background-image: #{$background-image-dark};
   }
 }
 
@@ -27,6 +29,9 @@ body {
   font-family: "Poppins", sans-serif;
   width: 100%;
   height: 100%;
+  //background-image: var(--background-image);
+  //background-size: cover;
+  //background-repeat: no-repeat;
 }
 
 html {

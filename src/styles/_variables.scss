@@ -1,14 +1,16 @@
 $background-light: rgb(255, 255, 255);
 $primary-light: rgb(0, 0, 0);
-$secondary-light: rgb(128, 128, 128);
+$secondary-light: rgb(255, 255, 255); //rgb(128, 128, 128);
 $interactive-light: rgb(55, 55, 55);
 
 $toggle-icon-light: url(../assets/sun.svg);
+$background-image-light: url(../assets/bg-light.jpg);
 
 
 $background-dark: rgb(0, 0, 0);
 $primary-dark: rgb(255, 255, 255);
-$secondary-dark: rgb(128, 128, 128);
+$secondary-dark: rgb(0, 0, 0); //rgb(128, 128, 128);
 $interactive-dark: rgb(200, 200, 200);
 
 $toggle-icon-dark: url(../assets/moon.png);
+$background-image-dark: url(../assets/bg-dark.jpg);

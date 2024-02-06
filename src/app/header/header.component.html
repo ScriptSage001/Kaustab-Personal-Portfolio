@@ -1,11 +1,20 @@
 <nav class="desktop-nav">
-    <div class="logo">kaustab samanta</div>
-    <div class="nav-links-container">
+    <div class="nav-links-container-left">
         <ul class="nav-links">
-            <li [routerLink]=""><a>home.</a></li>
-            <li><a href="">about.</a></li>
-            <li><a href="">experience.</a></li>
+            <li><a [routerLink]="['']">home.</a></li>
+            <li><a [routerLink]="['about']">about.</a></li>
             <li><a href="">projects.</a></li>
+            <li><a href="">contact.</a></li>
+        </ul>
+    </div>
+    <div class="logo">
+        <div>ks</div>
+    </div>
+    <div class="nav-links-container-right">
+        <ul class="nav-links">
+            <!-- <li><a href=""><fa-icon [icon]="['fas', 'github']"></fa-icon></a></li>
+            <li><a href=""><fa-icon [icon]="['fas', 'linkedin']"></fa-icon></a></li> -->
+            <li><a href=""><fa-icon [icon]="['fas', 'github']"></fa-icon>projects.</a></li>
             <li><a href="">contact.</a></li>
             <li class="dark-mode-toggler">
                 <input type="checkbox" id="dark-mode" (click)="toggleTheme()">

@@ -1,0 +1,62 @@
+.about {
+    position: relative;
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+
+    .about-header {
+        text-align: center;
+    }
+
+    .section-container {
+        display: flex;
+        gap: 4rem;
+        height: 80%;
+    }
+
+    .section__pic-container {
+        height: 400px;
+        width: 400px;
+        margin: auto 0;
+
+        .about-pic {
+            border-radius: 2rem;
+        }
+    }
+
+    .about-details-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .about-containers {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+
+            .details-container {
+                padding: 1.5rem;
+                flex: 1;
+                background: white;
+                border-radius: 2rem;
+                border: rgb(53, 53, 53) 0.1rem solid;
+                border-color: rgb(163, 163, 163);
+                text-align: center;
+            }
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        right: -5rem;
+        bottom: 2.5rem;
+    }
+
+    .icon {
+        cursor: pointer;
+        height: 2rem;
+    }
+}
