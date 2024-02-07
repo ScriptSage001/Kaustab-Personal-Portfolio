@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/kaustab-personal-portfolio/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

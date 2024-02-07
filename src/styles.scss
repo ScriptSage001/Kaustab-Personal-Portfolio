@@ -7,6 +7,9 @@
   --secondary: #{$secondary-light};
   --interactive: #{$interactive-light};
   --toggle-icon: #{$toggle-icon-light};
+  --drop-shadow: #{$drop-shadow-light};
+  --reverse-drop-shadow: #{$reverse-drop-shadow-light};
+  --navbar-bg: #{$navbar-bg-light};
   --background-image: #{$background-image-light};
 
   &.dark-mode {
@@ -15,6 +18,9 @@
     --secondary: #{$secondary-dark};
     --interactive: #{$interactive-dark};
     --toggle-icon: #{$toggle-icon-dark};
+    --drop-shadow: #{$drop-shadow-dark};
+    --reverse-drop-shadow: #{$reverse-drop-shadow-dark};
+    --navbar-bg: #{$navbar-bg-dark};
     --background-image: #{$background-image-dark};
   }
 }

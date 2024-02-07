@@ -8,10 +8,14 @@
   align-items: center;
   text-align: center;
   height: 8vh;
+  position: fixed;
+  width: 100%;
+  margin-top: 0;
+  z-index: 999;
 
   .nav-links {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
     list-style: none;
     font-size: 1.5rem;
 
@@ -19,12 +23,29 @@
       color: var(--primary);
       text-decoration: none;
     }
+  }
 
-    a:hover {
-      color: var(--secondary);
-      text-decoration: underline;
-      text-underline-offset: 0.5rem;
-      text-decoration-color: var(--interactive);
+  .nav-links-container-left {
+    .nav-links {
+      justify-content: space-evenly;
+
+      a:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+        text-decoration-color: var(--interactive);
+      }
+    }
+  }
+
+  .nav-links-container-right {
+    .nav-links {
+      justify-content: center;
+      gap: 3rem;
+
+      .icon:hover {
+        transform: scale(1.1);
+        transition: transform 0.2s ease-in-out;
+      }
     }
   }
 
@@ -42,6 +63,12 @@
   .logo:hover {
     cursor: default;
   }
+}
+
+.scrolled {
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(10px);
+  filter: drop-shadow(0 5px 10px var(--drop-shadow));
 }
 
 /* COLOR MODE TOGGLE BUTTON */

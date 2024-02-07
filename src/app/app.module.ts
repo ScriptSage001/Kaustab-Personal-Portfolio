@@ -8,8 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 export class AppModule {
 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faHeart, faGithub, faLinkedin);
+    library.addIconPacks(fas, fab);
   }
 
  }

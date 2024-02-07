@@ -2,6 +2,9 @@ $background-light: rgb(255, 255, 255);
 $primary-light: rgb(0, 0, 0);
 $secondary-light: rgb(255, 255, 255); //rgb(128, 128, 128);
 $interactive-light: rgb(55, 55, 55);
+$drop-shadow-light: rgba(0, 0, 0, 0.3);
+$reverse-drop-shadow-light: rgba(255, 255, 255, 0.3);
+$navbar-bg-light: rgba(255, 255, 255, 0.2);
 
 $toggle-icon-light: url(../assets/sun.svg);
 $background-image-light: url(../assets/bg-light.jpg);
@@ -11,6 +14,9 @@ $background-dark: rgb(0, 0, 0);
 $primary-dark: rgb(255, 255, 255);
 $secondary-dark: rgb(0, 0, 0); //rgb(128, 128, 128);
 $interactive-dark: rgb(200, 200, 200);
+$drop-shadow-dark: rgba(255, 255, 255, 0.3);
+$reverse-drop-shadow-dark: rgba(0, 0, 0, 0.3);
+$navbar-bg-dark: rgba(0, 0, 0, 0.9);
 
 $toggle-icon-dark: url(../assets/moon.png);
 $background-image-dark: url(../assets/bg-dark.jpg);

@@ -2,7 +2,7 @@
     <div class="nav-links-container-left">
         <ul class="nav-links">
             <li><a [routerLink]="['']">home.</a></li>
-            <li><a [routerLink]="['about']">about.</a></li>
+            <li><a [routerLink]="['']">about.</a></li>
             <li><a href="">projects.</a></li>
             <li><a href="">contact.</a></li>
         </ul>
@@ -12,10 +12,10 @@
     </div>
     <div class="nav-links-container-right">
         <ul class="nav-links">
-            <!-- <li><a href=""><fa-icon [icon]="['fas', 'github']"></fa-icon></a></li>
-            <li><a href=""><fa-icon [icon]="['fas', 'linkedin']"></fa-icon></a></li> -->
-            <li><a href=""><fa-icon [icon]="['fas', 'github']"></fa-icon>projects.</a></li>
-            <li><a href="">contact.</a></li>
+            <li class="icon"><a href="" title="Check Out My GitHub"><fa-icon [icon]="['fab', 'github']"></fa-icon></a></li>
+            <li class="icon"><a href="" title="Connect With Me On LinkedIn"><fa-icon [icon]="['fab', 'linkedin']"></fa-icon></a></li>
+            <li class="icon"><a href="" title="Ping Me On WhatsApp"><fa-icon [icon]="['fab', 'whatsapp']"></fa-icon></a></li>
+            <li class="icon"><a href="" title="Contact Me"><fa-icon [icon]="['fas', 'envelope']"></fa-icon></a></li>
             <li class="dark-mode-toggler">
                 <input type="checkbox" id="dark-mode" (click)="toggleTheme()">
                 <label for="dark-mode"></label>
