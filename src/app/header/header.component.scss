@@ -40,7 +40,7 @@
   .nav-links-container-right {
     .nav-links {
       justify-content: center;
-      gap: 3rem;
+      gap: 2rem;
 
       .icon:hover {
         transform: scale(1.1);
@@ -73,10 +73,12 @@
 
 /* COLOR MODE TOGGLE BUTTON */
 .dark-mode-toggler {
+  padding-left: 1rem;
+  
   label {
     position: relative;
-    width: 90px;
-    height: 40px;
+    width: 80px;
+    height: 33px;
     display: block;
     background: var(--interactive);
     border-radius: 100px;
@@ -87,8 +89,8 @@
   label:after {
     content: '';
     position: absolute;
-    height: 30px;
-    width: 30px;
+    height: 23px;
+    width: 23px;
     background: var(--background);
     background-image: var(--toggle-icon);
     background-size: cover;
@@ -100,7 +102,7 @@
   }
 
   input:checked~label:after {
-    left: 85px;
+    left: 75px;
     transform: translateX(-100%);
     //background: linear-gradient(180deg, #777, #3a3a3a);
     background: var(--background);
@@ -120,5 +122,38 @@
 
   input {
     display: none;
+  }
+}
+
+@media (max-width: 1400px) {
+  .desktop-nav {
+
+    .nav-links {
+      font-size: 1.3rem;
+    }
+
+    .logo {
+      width: 2.6rem;
+      height: 2.6rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  .dark-mode-toggler {
+    label {
+      width: 70px;
+      height: 30px;
+    }
+  
+    label:after {
+      height: 20px;
+      width: 20px;
+      top: 5px;
+      left: 5px;
+    }
+  
+    input:checked~label:after {
+      left: 65px;
+    }
   }
 }
