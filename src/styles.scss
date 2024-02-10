@@ -12,6 +12,8 @@
   --navbar-bg: #{$navbar-bg-light};
   --background-image: #{$background-image-light};
 
+  --bg-inverse: 0;
+
   &.dark-mode {
     --background: #{$background-dark};
     --primary: #{$primary-dark};
@@ -22,6 +24,8 @@
     --reverse-drop-shadow: #{$reverse-drop-shadow-dark};
     --navbar-bg: #{$navbar-bg-dark};
     --background-image: #{$background-image-dark};
+
+    --bg-inverse: 1;
   }
 }
 
@@ -35,9 +39,11 @@ body {
   font-family: "Poppins", sans-serif;
   width: 100%;
   height: 100%;
-  //background-image: var(--background-image);
-  //background-size: cover;
-  //background-repeat: no-repeat;
+  background-image: url(./assets/bg-new.webp); //var(--background-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  backdrop-filter: invert(var(--bg-inverse));
 }
 
 html {

@@ -13,7 +13,7 @@ footer {
     align-items: center;
     width: 100%;
     // padding-top: 6vh;
-    height: 4vh;
+    height: calc(6vh - 1px);
 
     p {
         text-align: center;
@@ -24,7 +24,8 @@ footer {
         }
 
         a:hover {
-          color: var(--secondary);
+          text-decoration: underline;
+          text-underline-offset: 0.3rem;
         }
       }
   }

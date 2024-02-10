@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { HomeNewComponent } from './home-new/home-new.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    HomeNewComponent
   ],
   imports: [
     BrowserModule,

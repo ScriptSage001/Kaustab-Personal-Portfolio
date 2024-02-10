@@ -1,0 +1,187 @@
+@import '../../styles.scss';
+
+.home-wrapper {
+    //background-color: red;
+    margin: 5vh 0;
+    height: 76vh;
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
+    align-items: center;
+    text-align: center;
+    color: var(--primary);
+    position: relative;
+
+    .text-wrapper {
+        //background-color: blue;
+
+        .title {
+            //background-color: red;
+            display: inline-block;
+            padding-left: 2rem;
+            font-size: 3.75rem;
+            font-weight: 700;
+            text-align: left;
+
+            span {
+                display: inline-block;
+            }
+        }
+
+        .intro {
+            //background-color: blue;
+            display: inline-block;
+            text-align: justify;
+            padding: 2rem;
+            font-size: 1.2rem;
+
+            span {
+                display: inline-block;
+            }
+
+            .name {
+                font-weight: 1000;
+                text-decoration: underline;
+                text-underline-offset: 0.3rem;
+                position: relative;
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                //animation: name-switch-colors 3s infinite alternate ease-in-out;
+
+                .alias {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    text-decoration: underline;
+                    text-underline-offset: 0.3rem;
+                    color: transparent;
+                    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    //animation: alias-switch-colors 3s infinite alternate ease-in-out;
+                }
+            }
+
+            .name:hover {
+                color: transparent;
+
+                .alias {
+                    color: var(--primary);
+                }
+            }
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: left;
+            gap: 1rem;
+            padding-left: 2rem;
+
+            .btn {
+                font-weight: 600;
+                font-size: 1rem;
+                transition: all 300ms ease;
+                padding: 1rem;
+                width: 10rem;
+                border-radius: 0.4rem;
+            }
+
+            .btn-1 {
+                background-color: transparent;
+                border: none;
+                color: var(--primary);
+            }
+
+            .btn-2 {
+                color: var(--secondary);
+                background: var(--primary);
+                border: var(--primary) 0.15rem solid;
+            }
+
+            .btn-1:hover,
+            .btn-2:hover {
+                cursor: pointer;
+            }
+
+            .btn-1:hover {
+                text-decoration: underline;
+                text-underline-offset: 0.5rem;
+            }
+
+            .btn-2:hover {
+                background: var(--secondary);
+                color: var(--primary);
+            }
+        }
+    }
+
+    .arrow {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        padding-right: 3rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        .arrow-circle {
+            border: none;
+            background-color: transparent;
+            color: var(--primary);
+            font-size: 3rem;
+            transition: 0.5s;
+        }
+
+        .arrow-circle:hover {
+            transform: translateX(0.7rem);
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes name-switch-colors {
+    from {
+        color: var(--primary);
+    }
+
+    to {
+        color: transparent;
+    }
+}
+
+@keyframes alias-switch-colors {
+    from {
+        color: transparent;
+    }
+
+    to {
+        color: var(--primary);
+    }
+}
+
+@media(max-width: 1400px) {
+    .home-wrapper {
+
+        .text-wrapper {
+
+            .title {
+                font-size: 3rem;
+            }
+
+            .intro {
+                font-size: 0.9rem;
+            }
+
+            .btn-container {
+                gap: 0.5rem;
+
+                .btn {
+                    font-size: 0.9rem;
+                    width: 9rem;
+                }
+            }
+        }
+
+        .arrow {
+            .arrow-circle {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}

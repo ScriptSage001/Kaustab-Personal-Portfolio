@@ -1,13 +1,18 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   public isDarkMode = false;
+
+  ngOnInit(): void {
+    // this.isDarkMode = true;
+    // document.documentElement.classList.add('dark-mode');
+  }
 
   @HostListener('window:scroll')
   onWindowScroll(){
