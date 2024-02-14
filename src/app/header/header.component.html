@@ -2,7 +2,7 @@
     <div class="nav-links-container-left">
         <ul class="nav-links">
             <li><a [routerLink]="['']">home.</a></li>
-            <li><a [routerLink]="['']">about.</a></li>
+            <li><a [routerLink]="['about']">about.</a></li>
             <li><a [routerLink]="['']">projects.</a></li>
             <li><a [routerLink]="['']">contact.</a></li>
         </ul>
@@ -13,20 +13,20 @@
     <div class="nav-links-container-right">
         <ul class="nav-links">
             <li class="icon">
-                <span class="tooltip">GitHub</span>
-                <a href=""><fa-icon [icon]="['fab', 'github']"></fa-icon></a>
+                <span class="tooltip" id="github-aria-label">GitHub</span>
+                <a href="" target="_blank" aria-label="link-github" aria-labelledby="github-aria-label"><fa-icon [icon]="['fab', 'github']"></fa-icon></a>
             </li>
             <li class="icon">
-                <span class="tooltip">LinkedIn</span>
-                <a href=""><fa-icon [icon]="['fab', 'linkedin']"></fa-icon></a>
+                <span class="tooltip"  id="linkedin-aria-label">LinkedIn</span>
+                <a href="" target="_blank" aria-label="link-linkedin" aria-labelledby="linkedin-aria-label"><fa-icon [icon]="['fab', 'linkedin']"></fa-icon></a>
             </li>
             <li class="icon">
-                <span class="tooltip">WhatsApp</span>
-                <a href=""><fa-icon [icon]="['fab', 'whatsapp']"></fa-icon></a>
+                <span class="tooltip"  id="twitter-aria-label">Twitter</span>
+                <a href="" target="_blank" aria-label="link-twitter" aria-labelledby="link-aria-twitter"><fa-icon [icon]="['fab', 'x-twitter']"></fa-icon></a>
             </li>
             <li class="icon">
-                <span class="tooltip">Email</span>
-                <a href=""><fa-icon [icon]="['fas', 'envelope']"></fa-icon></a>
+                <span class="tooltip"  id="whatsapp-aria-label">WhatsApp</span>
+                <a href="" target="_blank" aria-label="link-whatsapp" aria-labelledby="whatsapp-aria-label"><fa-icon [icon]="['fab', 'whatsapp']"></fa-icon></a>
             </li>
             <li class="dark-mode-toggler">
                 <input type="checkbox" id="dark-mode" (click)="toggleTheme()">

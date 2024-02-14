@@ -1,5 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 @import './styles/_variables.scss';
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./assets/font/Poppins-Thin.ttf') format(truetype);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/font/Poppins-Regular.ttf') format(truetype);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/font/Poppins-Medium.ttf') format(truetype);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/font/Poppins-SemiBold.ttf') format(truetype);
+}
 
 :root {
   --background: #{$background-light};
@@ -44,8 +72,15 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   backdrop-filter: invert(var(--bg-inverse));
+  
 }
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
