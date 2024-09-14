@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "kaustab-samanta"
-  }
+    "default": "kaustab-samanta",
+    "kaustab-samanta-portfolio": "kaustab-samanta"
+  },
+  "targets": {},
+  "etags": {}
 }

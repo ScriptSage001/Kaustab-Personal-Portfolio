@@ -1,62 +1,167 @@
-.about {
-    position: relative;
-    padding-top: 4vh;
-    height: 96vh;
-    margin: 0 10rem;
-    box-sizing: border-box;
-    min-height: fit-content;
+@import '../../styles.scss';
 
-    .about-header {
-        text-align: center;
-    }
+.about-wrapper{
+    //background-color: yellow;
+    margin: 5vh 0;
+    height: 80vh;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    color: var(--primary);
+    position: relative;    
 
-    .section-container {
-        display: flex;
-        gap: 4rem;
-        height: 80%;
-    }
+    .about-header{
+        .title {
+            //background-color: red;
+            font-size: 7rem;
+            font-weight: 700;
 
-    .section__pic-container {
-        height: 400px;
-        width: 400px;
-        margin: auto 0;
-
-        .about-pic {
-            border-radius: 2rem;
+            span {
+                display: inline-block;
+            }
         }
     }
 
-    .about-details-container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+    .container{
+        //background-color: aqua;
+        display: grid;
+        grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
+        align-items: center;
+        padding: 0 1vw;
 
-        .about-containers {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            margin-top: 2rem;
+        .pic-container{
+            
+            .profile-pic{
+                width: 30rem;
+                height: 30rem;
+            }
+        }
 
-            .details-container {
-                padding: 1.5rem;
-                flex: 1;
-                background: white;
-                border-radius: 2rem;
-                border: rgb(53, 53, 53) 0.1rem solid;
-                border-color: rgb(163, 163, 163);
-                text-align: center;
+        .about-container{
+            //background-color: blue;
+
+            .about-heading{
+                font-size: 2.3rem;
+                font-weight: 700;
+                text-align: left;
+                padding-bottom: 3vh;
+
+                span {
+                    display: inline-block;
+                }
+            }
+
+            .about-details{
+                font-size: 1.3rem;
+                font-weight: 500;
+                text-align: left;
+
+                span {
+                    display: inline-block;
+                    padding-bottom: 1.5vh;
+                }
+
             }
         }
     }
 
     .arrow {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        padding-right: 3rem;
         position: absolute;
-        right: -5rem;
-        bottom: 2.5rem;
+        bottom: 0;
+        right: 0;
+
+        .arrow-circle {
+            border: none;
+            background-color: transparent;
+            color: var(--primary);
+            font-size: 3rem;
+            transition: 0.5s;
+        }
+
+        .arrow-circle:hover {
+            transform: translateX(0.7rem);
+            cursor: pointer;
+        }
+    }
+}
+
+.experience-wrapper {
+    //background-color: yellow;
+    margin: 5vh 0;
+    height: auto;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    color: var(--primary);
+    position: relative; 
+
+    .experience-header {
+        //background-color: red;
+        padding: 2vh 0;
+        font-size: 7rem;
+        font-weight: 700;
+
+        span {
+            display: inline-block;
+        }
     }
 
-    .icon {
-        cursor: pointer;
-        height: 2rem;
+    .experience-item-container {
+        //background-color: aquamarine;
+        display: grid;
+        align-items: center;
+        padding: 2vh 10vw;
+
+        .experience-item {
+            padding: 2vh 0;
+
+            .experience-card {
+                background-color: var(--background);
+                border-radius: 10px;
+                box-shadow: 0 4px 10px var(--drop-shadow);
+                padding: 2rem;
+                text-align: left;
+                transition: box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    box-shadow: 0 6px 20px var(--drop-shadow);
+                    transform: scale(1.002);
+                }
+            }
+
+            .item-header {
+                text-align: left;
+
+                .item-title {
+                    font-size: 2rem;
+                    font-weight: 700;
+                }
+
+                .item-body {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
+
+                .expand-icon {
+                    fa-icon {
+                        font-size: 1.2rem;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .item-details {
+                text-align: justify;
+                font-size: 1.1rem;
+                padding-top: 1vh;
+            }
+        }
     }
 }
