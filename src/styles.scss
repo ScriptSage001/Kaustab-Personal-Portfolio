@@ -29,6 +29,13 @@
   src: url('./assets/font/Poppins-SemiBold.ttf') format(truetype);
 }
 
+@font-face {
+  font-family: 'RussoOne';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./assets/font/RussoOne-Regular.ttf') format(truetype);
+}
+
 :root {
   --background: #{$background-light};
   --primary: #{$primary-light};
@@ -82,4 +89,34 @@ html {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.tooltip {
+  margin-top: 0; /* Adjust the tooltip's margin as needed */
+}
+
+/* Tooltip box style */
+.tooltip-inner {
+  background-color: var(--primary) !important;
+  color: var(--background) !important;
+  font-size: 0.8rem !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px !important;
+  text-align: center;
+  max-width: 14rem;
+  box-shadow: 0px 4px 6px var(--drop-shadow);
+}
+
+/* Tooltip arrow pointing upwards when the tooltip is at the bottom */
+.bs-tooltip-bottom .tooltip-arrow {
+  position: absolute;
+  top: -6px;  /* Position the arrow at the very top */
+  left: calc(50% - 6px); /* Center the arrow horizontally */
+  
+  /* Create the arrow */
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid var(--primary);
 }

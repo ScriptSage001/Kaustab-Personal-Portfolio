@@ -1,7 +1,7 @@
 <section class="about-wrapper">
     <div class="about-header">
         <h1 class="title">
-            <span>I'm Kaustab.</span>
+            <span>Hi, I'm Kaustab.</span>
         </h1>
     </div>
     <div class="container">
@@ -9,29 +9,6 @@
             <img src="./assets/profile-pic-light.png" alt="Profile picture" class="profile-pic" />
         </div>
         <div class="about-container">
-            <!-- <div class="details-container">
-                <div class="experience-container">
-                    <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-                    <h3>Experience</h3>
-                    <p>2+ years <br />Frontend Development</p>
-                </div>
-                <div class="education-container">
-                    <img src="./assets/education.png" alt="Education icon" class="icon" />
-                    <h3>Education</h3>
-                    <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
-                </div>
-            </div>
-            <div class="text-container">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-                    reprehenderit et laborum, rem, dolore eum quod voluptate
-                    exercitationem nobis, nihil esse debitis maxime facere minus sint
-                    delectus velit in eos quo officiis explicabo deleniti dignissimos.
-                    Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-                    reiciendis ea magnam? Nulla, impedit fuga!
-                </p>
-            </div> -->
-
             <div class="about-heading">
                 <span>I'm a Software Developer from Kolkata, India, passionate about building scalable and efficient systems.</span>
             </div>
@@ -39,7 +16,6 @@
                 <span>Over the past {{experience}} years, I've developed my expertise in backend development, API performance optimization, and modernizing legacy systems. My experience spans microservices architecture, C#, .NET Core, and SQL Server, along with frontend development using Angular.</span>
                 <span>Currently, I'm focused on delivering innovative solutions at Infosys, enhancing transportation systems for a leading North American logistics company. In addition, I’m building Shortify.NET, a URL shortening service that integrates advanced features and secure authentication.</span>
             </div>
-
         </div>
     </div>
     <!-- <div class="arrow">
@@ -50,34 +26,54 @@
 </section>
 
 <section class="experience-wrapper">
-    <div class="experience-header">
-        <span>Experience</span>
+    <div class="experience-header header">
+        <span (click)="toggleShowExperience()">Experience</span>
     </div>
-    <div class="experience-item-container">
+    <div class="experience-item-container" [@experienceState]="experienceState">
         <div class="experience-item" *ngFor="let job of jobs; let i = index">
             <div class="experience-card">
-                <div class="item-header">
-                    <div class="item-title">
-                        <span>{{ job.title }}</span>
+                <div class="experience-card-top">
+                    <div class="item-header">
+                        <div class="item-title">
+                            <span>{{ job.title }}</span>
+                        </div>
+                        <div class="item-body">
+                            <span>{{ job.company }} | {{ job.startDate }} - {{ job.endDate }} | {{ job.location }}</span>
+                        </div>
                     </div>
-                    <div class="item-body">
-                        <span>{{ job.company }} | {{ job.startDate }} - {{ job.endDate }} | {{ job.location }}</span>
-                    </div>
-                    <!-- Toggle button to expand/collapse details -->
                     <div class="expand-icon">
                         <fa-icon *ngIf="!job.showDetails" [icon]="['fas', 'angle-down']" (click)="toggleDetails(i)"></fa-icon>
                         <fa-icon *ngIf="job.showDetails" [icon]="['fas', 'angle-up']" (click)="toggleDetails(i)"></fa-icon>
                     </div>
                 </div>
-                <!-- Details section (description and skills) that is shown/hidden based on toggle -->
-                <div class="item-details" *ngIf="job.showDetails">
+                <div class="item-details" [@detailsState]="job.showDetails ? 'visible' : 'hidden'">
                     <div class="item-body">
                         <span>{{ job.description }}</span>
                     </div>
                     <div class="item-body">
-                        <span>Skills: {{ job.skills }}</span>
+                        <span><br/>Skills: {{ job.skills }}</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills-wrapper">
+    <div class="skills-header header">
+        <span (click)="toggleShowSkills()">Skills</span>
+    </div>
+    <div class="skills-item-container" [@skillState]="skillState">
+        <nav>
+            <ul class="skills-type">
+                <li *ngFor="let type of skillTypes" class="skills-type-buttons" [ngClass]="{'active': type === typeSelected}" (click)="onTypeClick(type)">
+                    <a>{{ type }}</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="skills-items">
+            <div class="skill-icon" *ngFor="let skill of skills;">
+                <img src="{{ skill.iconUrl }}" alt="{{ skill.title }}" tooltip="{{ skill.title }}" placement="bottom" [@fade]="fadeState">
             </div>
         </div>
     </div>

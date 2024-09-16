@@ -111,6 +111,68 @@
         }
     }
 
+    .animation-wrapper {
+        svg {
+            font-family: 'RussoOne';
+            font-weight: 300;
+            width: 100%;
+            height: 100%;
+          }
+          
+          svg text {
+            text-transform: uppercase;
+            animation: stroke 8s infinite alternate;
+            stroke-width: 2;
+            stroke: var(--primary);
+            font-size: 5rem;
+            transition: opacity 2s ease-in-out;
+          }
+          
+          @keyframes stroke {
+            0% {
+              fill:  rgba(0, 0, 0, 0);
+              stroke: var(--primary);
+              stroke-dashoffset: 25%;
+              stroke-dasharray: 0 50%;
+              stroke-width: 2;
+            }
+            70% {
+              fill:  rgba(0, 0, 0, 0);
+              stroke: var(--primary);
+            }
+            80% {
+              fill:  rgba(0, 0, 0, 0);
+              stroke: var(--primary);
+              stroke-width: 3;
+            }
+            100% {
+              fill: var(--primary);
+              stroke: var(--primary);
+              stroke-dashoffset: -25%;
+              stroke-dasharray: 50% 0;
+              stroke-width: 0;
+            }
+          }
+          
+          @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+          }
+          
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          
+          svg text.fade-out {
+            animation: fadeOut 1s forwards;
+          }
+          
+          svg text.fade-in {
+            animation: fadeIn 1s forwards;
+          }
+    }
+
     .arrow {
         display: flex;
         justify-content: right;

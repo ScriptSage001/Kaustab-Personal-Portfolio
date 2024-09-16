@@ -10,8 +10,14 @@ export class HeaderComponent implements OnInit {
   public isDarkMode = false;
 
   ngOnInit(): void {
-    // this.isDarkMode = true;
-    // document.documentElement.classList.add('dark-mode');
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme === 'dark') {
+      this.isDarkMode = true;
+      document.documentElement.classList.add('dark-mode');
+    } else {
+      this.isDarkMode = false;
+      document.documentElement.classList.remove('dark-mode');
+    }
   }
 
   @HostListener('window:scroll')
@@ -26,6 +32,13 @@ export class HeaderComponent implements OnInit {
 
   public toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
-    document.documentElement.classList.toggle('dark-mode');
+
+    if (this.isDarkMode) {
+      document.documentElement.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
   }
 }
