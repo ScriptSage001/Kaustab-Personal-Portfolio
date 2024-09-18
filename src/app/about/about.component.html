@@ -78,3 +78,69 @@
         </div>
     </div>
 </section>
+
+<section class="certificate-wrapper">
+    <div class="certificate-header header">
+        <span (click)="toggleShowCertificate()">Certifications & Courses</span>
+    </div>
+    <div class="certificate-item-container" [@certificateState]="certificateState">
+        <div class="certificate-item" *ngFor="let cert of certificates">
+            <div class="certificate-card">
+                <div class="certificate-card-top">
+                    <div class="item-left">
+                        <div class="item-title">
+                            <span>{{ cert.title }}</span>
+                        </div>
+                        <div class="item-body">
+                            <span>{{ cert.issuingAuthority }} | Issued {{ cert.formattedIssuedAt }}</span>
+                        </div>
+                    </div>
+                    <div class="item-right">
+                        <a class="creds-link" href="{{ cert.credentialUrl }}" target="_blank">
+                            <span class="creds-link-text">
+                                Show Credentials
+                            </span>
+                            <fa-icon class="creds-link-icon" [icon]="['fas', 'arrow-up-right-from-square']"></fa-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="award-wrapper">
+    <div class="award-header header">
+        <span (click)="toggleShowAward()">Awards & Recognitions</span>
+    </div>
+    <div class="award-container" [@awardState]="awardState">
+        <div class="award-slider">
+            <img class="slider-image" *ngFor="let award of awards; let i = index" id="slide-{{i}}" src="{{ award.certificateUrl }}" alt="{{ award.title }}">
+        </div>
+        <div class="award-slider-nav">
+            <a class="slider-nav" *ngFor="let award of awards; let i = index" id="nav-{{i}}" (click)="selectAwardSlide(i)"></a>
+        </div>
+    </div>
+</section>
+
+<section class="education-wrapper">
+    <div class="education-header header">
+        <span (click)="toggleShowEducation()">Education</span>
+    </div>
+    <div class="education-item-container" [@educationState]="educationState">
+        <div class="education-item" *ngFor="let edu of educations; let i = index">
+            <div class="education-card">
+                <div class="education-card-top">
+                    <div class="item-header">
+                        <div class="item-title">
+                            <span>{{ edu.institution }}</span>
+                        </div>
+                        <div class="item-body">
+                            <span>{{ edu.degree }} - {{ edu.shortDegree }} | {{ edu.subjects }} <br/> {{ edu.startYear }} - {{ edu.endYear }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

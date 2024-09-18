@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Skill } from '../models/skill-model';
 
 @Injectable({
@@ -224,8 +223,6 @@ export class SkillService {
             "iconUrl": "https://img.icons8.com/external-tal-revivo-bold-tal-revivo/100/external-redis-an-in-memory-data-structure-project-implementing-a-distributed-logo-bold-tal-revivo.png"
         } 
     ];
-
-    constructor(private firestore: AngularFirestore) { }
 
     getAllSkills(): Skill[] {
         return this.skills;

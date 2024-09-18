@@ -5,6 +5,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { DatePipe } from '@angular/common';
 
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,7 +36,7 @@ import { HomeNewComponent } from './home-new/home-new.component';
     AngularFirestoreModule,
     TooltipModule.forRoot()
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -44,4 +45,4 @@ export class AppModule {
     library.addIconPacks(fas, fab);
   }
 
- }
+}
