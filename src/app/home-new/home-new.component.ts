@@ -5,7 +5,7 @@ import { Component, AfterViewInit } from '@angular/core';
   templateUrl: './home-new.component.html',
   styleUrl: './home-new.component.scss'
 })
-export class HomeNewComponent {
+export class HomeNewComponent implements AfterViewInit {
   animationTexts = [
     "Welcome to Kaustab's Portfolio", 
     "Experienced Software Developer", 
@@ -14,7 +14,7 @@ export class HomeNewComponent {
     "Showcasing My Skills"];
   index = 0;
   textElement!: HTMLElement;
-  animationDuration = 10000;
+  animationDuration: number = 10000;
 
   ngAfterViewInit() {
     this.textElement = document.getElementById("animated-text") as HTMLElement;

@@ -78,7 +78,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  backdrop-filter: invert(var(--bg-inverse));  
+  backdrop-filter: invert(var(--bg-inverse));
 }
 
 html {
@@ -119,4 +119,29 @@ html {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 6px solid var(--primary);
+}
+
+/* Dashed border */
+hr.dashed {
+  width: 100%;
+  border-top: 0.1rem dashed var(--primary);
+}
+
+/* Dotted border */
+hr.dotted {
+  width: 100%;
+  border-top: 0.1rem dotted var(--primary);
+}
+
+/* Solid border */
+hr.solid {
+  width: 100%;
+  border-top: 0.1rem solid var(--primary);
+}
+
+/* Rounded border */
+hr.rounded {
+  width: 100%;
+  border-top: 0.2rem solid var(--primary);
+  border-radius: 0.4rem;
 }

@@ -1,13 +1,31 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations'
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+  animations: [
+    trigger('menuState',[
+      state('hidden', style({
+        width: '0px',
+        opacity: 0.75,
+        overflow: 'hidden' 
+      })),
+      state('visible', style({
+        height: '*',
+        opacity: 1
+      })),
+      transition('hidden <=> visible', [
+        animate('200ms ease-in-out')
+      ])
+    ])
+  ]
 })
 export class HeaderComponent implements OnInit {
 
   public isDarkMode = false;
+  public isMenuOpen: boolean = false;
 
   ngOnInit(): void {
     const savedTheme = localStorage.getItem('theme');
@@ -28,6 +46,10 @@ export class HeaderComponent implements OnInit {
     } else {
       navbar.classList.remove('scrolled');
     }
+  }  
+
+  public toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   public toggleTheme() {
@@ -40,5 +62,9 @@ export class HeaderComponent implements OnInit {
       document.documentElement.classList.remove('dark-mode');
       localStorage.setItem('theme', 'light');
     }
+  }
+
+  get menuState() {
+    return this.isMenuOpen ? 'visible' : 'hidden';
   }
 }

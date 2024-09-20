@@ -1,4 +1,4 @@
-<nav class="desktop-nav">
+<nav class="desktop-header">
     <div class="nav-links-container-left">
         <ul class="nav-links">
             <li><a [routerLink]="['']">home.</a></li>
@@ -35,3 +35,42 @@
         </ul>
     </div>
 </nav>
+
+<header class="mobile-header">
+    <div class="hamburger-menu">
+      <button (click)="toggleMenu()">
+        <fa-icon [icon]="['fas', 'bars']"></fa-icon>
+      </button>
+    </div>
+
+    <div class="logo">
+        <div [routerLink]="['']">ks</div>
+    </div>
+    
+    <div class="dark-mode-toggler">
+        <input type="checkbox" id="dark-mode" (click)="toggleTheme()">
+        <label for="dark-mode"></label>
+    </div>
+  
+    <!-- Sidebar/Drawer Menu -->
+    <nav class="nav-menu" [ngClass]="{ 'open': isMenuOpen }" [@menuState]="menuState">
+        <button (click)="toggleMenu()">
+            <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
+        </button>
+        <ul>
+            <li><a routerLink="/" (click)="toggleMenu()">home.</a></li>
+            <li><a routerLink="/about" (click)="toggleMenu()">about.</a></li>
+            <li><a routerLink="/projects" (click)="toggleMenu()">projects.</a></li>
+            <li><a routerLink="/contact" (click)="toggleMenu()">contact.</a></li>
+            <hr class="solid">
+            <li>
+                <div class="mobile-nav-links">
+                    <a href="https://github.com/ScriptSage001/ScriptSage001" target="_blank" aria-label="link-github" aria-labelledby="github-aria-label"><fa-icon [icon]="['fab', 'github']"></fa-icon></a>
+                    <a href="https://www.linkedin.com/in/kaustab-samanta/" target="_blank" aria-label="link-linkedin" aria-labelledby="linkedin-aria-label"><fa-icon [icon]="['fab', 'linkedin']"></fa-icon></a>
+                    <a href="" target="_blank" aria-label="link-twitter" aria-labelledby="link-aria-twitter"><fa-icon [icon]="['fab', 'x-twitter']"></fa-icon></a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+  </header>
+  

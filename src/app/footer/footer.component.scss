@@ -30,3 +30,29 @@ footer {
       }
   }
 }
+
+@media (max-width: 1024px) {
+  footer {
+    .footer-copyright {
+      grid-template-columns: 1fr;
+      height: 8vh;
+      padding: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  footer {
+    .footer-copyright {
+      padding: 1rem 0;
+      font-size: 0.8rem;
+      height: 8vh;
+
+      p {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
