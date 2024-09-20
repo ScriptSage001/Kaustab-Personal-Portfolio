@@ -188,6 +188,14 @@
             color: var(--primary);
             font-size: 3rem;
             transition: 0.5s;
+
+            #right-arrow {
+                display: block;
+            }
+
+            #down-arrow {
+                display: none;
+            }
         }
 
         .arrow-circle:hover {
@@ -330,6 +338,14 @@
                 color: var(--primary);
                 font-size: 3rem;
                 animation: moveDown 2s ease-in-out infinite;
+
+                #right-arrow {
+                    display: none;
+                }
+
+                #down-arrow {
+                    display: block;
+                }
             }
 
             .arrow-circle:hover {
