@@ -40,11 +40,15 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll')
   onWindowScroll(){
-    const navbar = document.getElementsByClassName('desktop-nav')[0];
+    const desktopNavbar = document.getElementsByClassName('desktop-header')[0];
+    const mobileNavbar = document.getElementsByClassName('mobile-header')[0];
+
     if (window.scrollY > 0) {
-      navbar.classList.add('scrolled');
+      desktopNavbar.classList.add('scrolled');
+      mobileNavbar.classList.add('scrolled');
     } else {
-      navbar.classList.remove('scrolled');
+      desktopNavbar.classList.remove('scrolled');
+      mobileNavbar.classList.remove('scrolled');
     }
   }  
 
