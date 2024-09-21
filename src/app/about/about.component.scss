@@ -468,3 +468,206 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 2vh 0;
+        font-size: 3rem;
+        font-weight: 700;
+    
+        span {
+            display: inline-block;
+            transition: 0.5s;
+        }
+    
+        span:hover {
+            cursor: pointer;
+            scale: 1.1;
+        }
+    }
+    
+    .header-clicked {
+        -webkit-text-fill-color: var(--background);
+        -webkit-text-stroke-color: var(--primary);
+        -webkit-text-stroke-width: 1.5px;
+    }
+    
+    .about-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        height: auto;
+
+        .about-header {
+            padding: 2rem 0;
+
+            .title {
+                font-size: 2.7rem;
+                font-weight: 700;
+    
+                span {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 0 10vw;
+
+            .pic-container {
+                padding-bottom: 2rem;
+
+                .profile-pic {
+                    width: 12rem;
+                    height: 12rem;
+                    border-radius: 50%;
+                    box-shadow: 0 7px 10px var(--drop-shadow);
+                }
+            }
+    
+            .about-container {
+                .about-heading {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    text-align: center;
+                    padding-bottom: 3vh;
+    
+                    span {
+                        display: inline-block;
+                    }
+                }
+    
+                .about-details {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    text-align: center;
+    
+                    span {
+                        display: inline-block;
+                        padding-bottom: 1.5vh;
+                    }
+    
+                }
+            }
+        }
+
+    }
+
+    .experience-wrapper {
+        margin: 0;
+        width: 100vw;
+
+        .experience-item-container {
+            display: grid;
+            align-items: center;
+            padding: 1vh 3vw;
+            max-width: 100VW;
+    
+            .experience-item {
+                padding: 1vh 0;
+    
+                .experience-card {
+                    background-color: var(--background);
+                    border-radius: 10px;
+                    box-shadow: 0 4px 10px var(--drop-shadow);
+                    padding: 2rem;
+                    text-align: left;
+                    transition: box-shadow 0.3s ease-in-out;
+    
+                    &:hover {
+                        box-shadow: 0 6px 20px var(--drop-shadow);
+                        transform: scale(1.002);
+                    }
+    
+                    .experience-card-top {
+                        display: grid;
+                        grid-template-columns: 70vw 1fr;
+    
+                        .expand-icon {
+                            align-self: center;
+                            justify-self: right;
+                            padding-right: 1vw;
+    
+                            fa-icon {
+                                font-size: 1.3rem;
+    
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .item-header {
+                    text-align: left;
+    
+                    .item-title {
+                        font-size: 1rem;
+                        font-weight: 700;
+                    }
+    
+                    .item-body {
+                        font-size: 0.7rem;
+                        font-weight: 500;
+                    }
+                }
+    
+                .item-details {
+                    text-align: justify;
+                    font-size: 0.7rem;
+                    padding-top: 1vh;
+                }
+            }
+        }
+    }
+
+    .skills-wrapper {
+        margin: 0;
+
+        .skills-item-container {
+            .skills-type {
+                gap: 1rem;
+                padding: 0.5rem 1rem;
+
+                .skills-type-buttons {
+                    padding: 0.5rem 1rem;
+
+                    a {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            .skills-items {
+                padding: 0 1rem;
+
+                .skill-icon {                
+                    img {
+                        width: 3rem;
+                        height: 3rem;
+                        padding: 0.5rem 1rem;
+                    }
+                }
+
+                &:hover {
+                    row-gap: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .certificate-wrapper {
+        display: none;
+    }
+
+    .award-wrapper {
+        display: none;
+    }
+
+    .education-wrapper {
+        display: none;
+    }
+}
