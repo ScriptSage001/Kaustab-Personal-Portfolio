@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations'
+import { trigger, state, style, transition, animate, group, query } from '@angular/animations'
 import { DatePipe } from '@angular/common';
 
 import { ExperienceService } from '../shared/services/experience-service';
@@ -138,6 +138,7 @@ export class AboutComponent implements OnInit {
   skillTypes: string[] = ["All", "Languages", "Frameworks & Technologies", "Tools", "Cloud Platforms", "Methodologies", "Other"];
   typeSelected: string = this.skillTypes[0];
   awardSlideIndex: number = 0;
+  slideInterval: any;
 
   fadeState: string = 'in';
 
@@ -156,8 +157,8 @@ export class AboutComponent implements OnInit {
     this.loadSkillsByTypeSelected();
     this.getAllCertificates();
     this.getAllAwards();
-    this.showAwardSlide();
     this.getAllEducations();
+    this.startAwardAutoSlide();
   }
 
   calculateExperience(): void {
@@ -229,7 +230,6 @@ export class AboutComponent implements OnInit {
   }
 
   toggleShowAward() {
-    this.showAwardSlide();
     this.showAwards = !this.showAwards;
 
     const award = document.getElementsByClassName('award-header')[0];
@@ -282,26 +282,15 @@ export class AboutComponent implements OnInit {
     }, 100);
   }
 
-  selectAwardSlide(index: number): void {
-    this.awardSlideIndex = index;
-    this.showAwardSlide();
+  startAwardAutoSlide(): void {
+    this.slideInterval = setInterval(() => {
+      this.awardSlideIndex = (this.awardSlideIndex + 1) % this.awards.length;
+    }, 3000);
   }
 
-  showAwardSlide(): void {
-    var index = this.awardSlideIndex;
-
-    const slides = document.getElementsByClassName('slider-image');
-    Array.from(slides).forEach(x => {
-      x.classList.remove('slider-active')
-    });
-    const slide = document.getElementById(`slide-${index}`);
-    slide?.classList.add('slider-active');
-
-    const navs = document.getElementsByClassName('slider-nav');
-    Array.from(navs).forEach(x => {
-      x.classList.remove('slider-nav-active')
-    });
-    const nav = document.getElementById(`nav-${index}`);
-    nav?.classList.add('slider-nav-active');
+  selectAwardSlide(index: number): void {
+    this.awardSlideIndex = index;
+    clearInterval(this.slideInterval);
+    this.startAwardAutoSlide();
   }
 }

@@ -115,10 +115,12 @@
     </div>
     <div class="award-container" [@awardState]="awardState">
         <div class="award-slider">
-            <img class="slider-image" *ngFor="let award of awards; let i = index" id="slide-{{i}}" src="{{ award.certificateUrl }}" alt="{{ award.title }}">
+            <img class="slider-image" *ngFor="let award of awards; let i = index" id="slide-{{i}}" 
+                [ngClass]="{'slider-active': i === awardSlideIndex}" src="{{ award.certificateUrl }}" alt="{{ award.title }}">
         </div>
         <div class="award-slider-nav">
-            <a class="slider-nav" *ngFor="let award of awards; let i = index" id="nav-{{i}}" (click)="selectAwardSlide(i)"></a>
+            <a class="slider-nav" *ngFor="let award of awards; let i = index" 
+            [ngClass]="{'slider-nav-active': i === awardSlideIndex}" id="nav-{{i}}" (click)="selectAwardSlide(i)"></a>
         </div>
     </div>
 </section>

@@ -349,12 +349,10 @@
 
     .award-container {
         position: relative;
-        //max-width: 48rem;
         margin: 0 auto;
 
         .award-slider {
             display: flex;
-            //aspect-ratio: 3/2;
             width: auto;
             height: 60vh;
             overflow-x: auto;
@@ -371,7 +369,7 @@
             img {
                 flex: 1 0 100%;
                 scroll-snap-align: start;
-                object-fit: fill;
+                object-fit: cover;
                 display: none;
             }
 
@@ -482,7 +480,7 @@
     
         span:hover {
             cursor: pointer;
-            scale: 1.1;
+            scale: 1.01;
         }
     }
     
@@ -562,7 +560,7 @@
         .experience-item-container {
             display: grid;
             align-items: center;
-            padding: 1vh 3vw;
+            padding: 0 3vw;
             max-width: 100VW;
     
             .experience-item {
@@ -660,14 +658,111 @@
     }
 
     .certificate-wrapper {
-        display: none;
+        margin: 0;
+        width: 100vw;
+
+        .certificate-item-container {
+            padding: 0 3vw;
+            max-width: 100VW;
+
+            .certificate-item {
+                padding: 1vh 0;
+
+                .certificate-card {
+                    background-color: var(--background);
+                    border-radius: 10px;
+                    box-shadow: 0 4px 10px var(--drop-shadow);
+                    padding: 1rem;
+                    text-align: left;
+                    transition: box-shadow 0.3s ease-in-out;
+
+                    .certificate-card-top {
+                        display: grid;
+                        grid-template-columns: 1fr 0.3fr;
+
+                        .item-right {
+                            padding-right: 1vw;
+
+                            .creds-link {
+
+                                .creds-link-text {
+                                    display: none;
+                                }
+
+                                .creds-link-icon {
+                                    font-size: 1.2rem;
+                                }
+                            }                        
+                        }
+
+                        .item-left {
+        
+                            .item-title {
+                                font-size: 1rem;
+                            }
+        
+                            .item-body {
+                                font-size: 0.7rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .award-wrapper {
-        display: none;
+        margin: 0;
+
+        .award-container {
+            margin: 0 auto;
+
+            .award-slider {
+                width: auto;
+                height: auto;
+
+                img {
+                    width: 95vw;
+                    height: auto;
+                }
+
+                .slider-active {
+                    display: block;
+                }
+            }
+        }
     }
 
     .education-wrapper {
-        display: none;
+        margin: 0;
+
+        .education-item-container {
+            display: grid;
+            align-items: center;
+            padding: 1vh 3vw;
+            max-width: 100vw;
+
+            .education-item {
+                padding: 1vh 0;
+
+                .education-card {
+                    padding: 1rem;
+
+                    .education-card-top {
+                        display: block;
+                    }
+                }
+
+                .item-header {
+                    .item-title {
+                        font-size: 1rem;
+                    }
+
+                    .item-body {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
     }
 }
